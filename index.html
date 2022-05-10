@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -20,40 +20,44 @@
 
         <main>
             <div class="card">
-                <div class="input" id="taskName">
+                <div class="input" id="cardTaskName">
                     <input type="text" name="name" placeholder="Nome da Tarefa"><br>
                 </div>
 
-                <div class="input">
+                <div class="input" id="cardDescription">
                     <label>Descrição:</label>
                     <textarea name="description"></textarea>
                 </div>    
                 
-                <div class="input">
+                <div class="input" id="cardDate">
                     <label>Data:</label>
                     <input type="datetime-local" name="date">
                 </div>                    
 
-                <div class="button">
-                    <button onclick="task.save()">Salvar</button>
-                    <button onclick="task.new()">Nova Tarefa</button>
+                <div class="button" id="cardButton">
+                    <button onclick="Task.save()">Salvar</button>
+                    <button onclick="Task.clean()">Limpar</button>
                 </div>
             </div>
 
             <div class="content">
                 <table border="1">
                     <thead>
-                        <th>Tarefa</th>
-                        <th>Descrição</th>
-                        <th>Data e Hora</th>   
-                        <th>Ações</th>                     
+                        <th id="contentTaskName">Tarefa</th>
+                        <th id="contentDescription">Descrição</th>
+                        <th id="contentDate">Data e Hora</th>   
+                        <th id="contentActions">Ações</th>                     
                     </thead>
-                    <tbody>
+
+                    <tbody class="tbody">
                         <tr>
-                            <td>Teste</td>
-                            <td>Função de testar o que foi feito</td>
+                            <td>Matar o cavalo manco</td>
+                            <td>Correr para fora de casa toda vez que o homem macaco que não tem alma e nem coração correr atras de mim</td>
                             <td>07/05/2022 17:25</td>
-                            <td></td>
+                            <td>
+                                <img src="img\editar.png" alt="edit">     
+                                <img src="img\mais.png" alt="add">                           
+                            </td>
                         </tr>
                     </tbody>                   
                 </table>
