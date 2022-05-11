@@ -31,9 +31,7 @@ class Task {
     }
 
     clean() {
-        Task.clean = document.getElementById('clean') = function() {
-            return alert('Gostaria de limpas todos os campos?');
-        }
+
     }
 }
 
