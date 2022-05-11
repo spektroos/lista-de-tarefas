@@ -1,31 +1,40 @@
 class Task {
 
     constructor() {
-        this.id = 1
-        this.arrayProduct = [];
+        this.id = 0
+        this.arrayTasks = [];
     }
 
     save() {
         let task = this.readData();
 
-        console.log(task);
+        this.add(task);
 
+        console.log(this.arrayTasks);
+        alert('Tarefa Salva');
+    }
+
+    add(task) {
+        this.arrayTasks.push(task);
+        this.id++;
     }
 
     readData() {
         let task = {}
 
-        Task.id = this.id;
-        Task.taskName = document.getElementsById('cardTaskName').value;
-        Task.description = document.getElementsById('cardDescription').value;
-        Task.date = document.getElementsById('cardDate').value;
+        task.id = this.id;
+        task.taskName = document.getElementById('cardTaskName').value;
+        task.description = document.getElementById('cardDescription').value;
+        task.date = document.getElementById('cardDate').value;
 
         return task;
     }
 
     clean() {
-        Task.clean = document.getElementById('clean').onreset = function() {
-            return confirm("Gostaria de limpas todos os campos?");
+        Task.clean = document.getElementById('clean') = function() {
+            return alert('Gostaria de limpas todos os campos?');
         }
     }
 }
+
+var task = new Task();
