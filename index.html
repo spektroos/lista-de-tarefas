@@ -20,21 +20,21 @@
 
         <main>
             <div class="card">
-                <div class="input" id="cardTaskName">
-                    <input type="text" name="name" placeholder="Nome da Tarefa"><br>
+                <div class="input">
+                    <input type="text" id="cardTaskName" name="name" placeholder="Nome da Tarefa"><br>
                 </div>
 
-                <div class="input" id="cardDescription">
+                <div class="input">
                     <label>Descrição:</label>
-                    <textarea name="description"></textarea>
+                    <textarea id="cardDescription" name="description"></textarea>
                 </div>    
                 
-                <div class="input" id="cardDate">
+                <div class="input">
                     <label>Data:</label>
-                    <input type="datetime-local" name="date">
+                    <input type="datetime-local" id="cardDate" name="date">
                 </div>                    
 
-                <div class="button" id="cardButton">
+                <div class="button" >
                     <button onclick="task.save()">Salvar</button>
                     <button onclick="task.clean()">Limpar</button>
                 </div>
