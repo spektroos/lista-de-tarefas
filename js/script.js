@@ -10,16 +10,12 @@ class Task {
 
         this.add(task);
 
-        console.log(this.arrayTasks);
+        this.addTable();
+
         alert('Tarefa Salva');
     }
 
-    add(task) {
-        this.arrayTasks.push(task);
-        this.id++;
-    }
-
-    readData() {
+        readData() {
         let task = {}
 
         task.id = this.id;
@@ -28,6 +24,25 @@ class Task {
         task.date = document.getElementById('cardDate').value;
 
         return task;
+    }
+
+    add(task) {
+        this.arrayTasks.push(task);
+        this.id++;
+    }
+
+    addTable() {
+        let tbody = document.getElementsByClassName('tbody');
+
+        for (let i = 0; i < this.arrayTasks.length; i++) {
+            let tr = tbody.insertRow(-1);
+            
+            let td_taskName = tr.insertCell();
+            let td_description = tr.insertCell();
+            let td_date = tr.insertCell();
+            let td_actions = tr.insertCell();
+        }
+
     }
 
     clean() {
