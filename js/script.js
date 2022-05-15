@@ -32,17 +32,30 @@ class Task {
     }
 
     addTable() {
-        let tbody = document.getElementsByClassName('tbody');
+        let tbody = document.getElementById('tbody');
+        tbody.innerText = "";
 
         for (let i = 0; i < this.arrayTasks.length; i++) {
-            let tr = tbody.insertRow(-1);
+            let tr = tbody.insertRow();
             
             let td_taskName = tr.insertCell();
             let td_description = tr.insertCell();
             let td_date = tr.insertCell();
             let td_actions = tr.insertCell();
-        }
 
+            td_taskName.innerText = this.arrayTasks[i].taskName;
+            td_description.innerText = this.arrayTasks[i].description;
+            td_date.innerText = this.arrayTasks[i].date;
+
+            let imgEdit = document.createElement('img');
+            imgEdit.src = 'img/editar.png';
+
+            let imgDelete = document.createElement('img');
+            imgDelete.src = 'img/deletar.png'
+
+            td_actions.appendChild(imgEdit);
+            td_actions.appendChild(imgDelete);
+        }
     }
 
     clean() {
