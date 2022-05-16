@@ -13,6 +13,8 @@ class Task {
         this.addTable();
 
         alert('Tarefa Salva');
+
+        this.clean();
     }
 
         readData() {
@@ -52,6 +54,8 @@ class Task {
 
             let imgDelete = document.createElement('img');
             imgDelete.src = 'img/deletar.png'
+            imgDelete.setAttribute("onclick","task.delete("+ this.arrayTasks[i].id +")");
+
 
             td_actions.appendChild(imgEdit);
             td_actions.appendChild(imgDelete);
@@ -59,7 +63,22 @@ class Task {
     }
 
     clean() {
+        document.getElementById('cardTaskName').value = '';
+        document.getElementById('cardDescription').value = '';
+        document.getElementById('cardDate').value = '';
+    }
 
+    delete(id) {
+        let tbody = document.getElementById('tbody');
+        
+        for(let i = 0; i < this.arrayTasks.length; i++) {
+            if(this.arrayTasks[i].id == id) {
+                this.arrayTasks.splice(i, 1)
+                tbody.deleteRow(i);
+            }
+        }
+
+        alert('Tarefa deletada');
     }
 }
 
