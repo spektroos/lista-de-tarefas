@@ -85,6 +85,11 @@ button:active {
     margin-left: 385px;
 }
 
+.buttonReposition {
+    margin-bottom: 20px;
+    margin-left: 365px;
+}
+
 .content {
     margin-top: 20px;
 }
